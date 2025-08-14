@@ -18,11 +18,17 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'sans': ['Poppins', 'system-ui', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
+				background: {
+					DEFAULT: 'hsl(var(--background))',
+					secondary: 'hsl(var(--background-secondary))'
+				},
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -52,16 +58,22 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				orange: 'hsl(var(--orange))',
+				purple: 'hsl(var(--purple))',
+				turquoise: 'hsl(var(--turquoise))',
+				pink: 'hsl(var(--pink))'
+			},
+			backgroundImage: {
+				'gradient-orange': 'var(--gradient-orange)',
+				'gradient-purple': 'var(--gradient-purple)',
+				'gradient-turquoise': 'var(--gradient-turquoise)',
+				'gradient-pink': 'var(--gradient-pink)',
+				'gradient-hero': 'var(--gradient-hero)'
+			},
+			boxShadow: {
+				'orange': 'var(--shadow-orange)',
+				'purple': 'var(--shadow-purple)',
+				'glow': 'var(--shadow-glow)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
