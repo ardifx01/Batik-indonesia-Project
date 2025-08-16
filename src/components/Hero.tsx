@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-student.jpg";
-
+import batik from "@/assets/batikdua.glb";
+import "@google/model-viewer";
 const Hero = () => {
   return (
     <section className="min-h-screen bg-gradient-hero flex items-center pt-16">
@@ -9,28 +10,27 @@ const Hero = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Empowering Education for a{" "}
-              <span className="text-purple">Brighter Indonesia</span>
+              Batik: Lebih dari Sekadar Kain <span className="text-purple">Sebuah Kisah Abadi.</span>
             </h1>
-            
+
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              Our programs are designed to make quality education accessible, engaging, 
-              and inspiring for every student in Indonesia.
+              Selamat datang di dunia batik, tempat seni, sejarah, dan tradisi terjalin dalam setiap helainya. Jelajahi keindahan, makna, dan keragaman motif batik dari seluruh penjuru Nusantara. Temukan cerita di balik warisan budaya yang
+              diakui dunia.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 items-start">
               <Button variant="contact" size="xl">
-                Contact
+                Jelajahi
               </Button>
-              
+
               <div className="flex flex-col sm:flex-row gap-6 text-foreground">
                 <div>
                   <div className="text-3xl font-bold text-orange">100+</div>
-                  <div className="text-sm text-muted-foreground">Educational Programs</div>
+                  <div className="text-sm text-muted-foreground">Jenis Batik </div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-purple">2M+</div>
-                  <div className="text-sm text-muted-foreground">Students Reached</div>
+                  <div className="text-sm text-muted-foreground">Pengguna Batik</div>
                 </div>
               </div>
             </div>
@@ -39,13 +39,10 @@ const Hero = () => {
           {/* Right Image */}
           <div className="relative">
             <div className="relative z-10">
-              <img
-                src={heroImage}
-                alt="Indonesian student with educational materials"
-                className="w-full max-w-lg mx-auto rounded-2xl shadow-glow"
-              />
+              {" "}
+              <model-viewer src={batik} alt="Batik 3D Model" auto-rotate camera-controls style={{ width: "100%", height: "100vh" }}></model-viewer>
             </div>
-            
+
             {/* Decorative elements */}
             <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-orange rounded-full opacity-20 blur-xl"></div>
             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-purple rounded-full opacity-20 blur-xl"></div>

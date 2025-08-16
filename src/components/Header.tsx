@@ -8,22 +8,30 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className="text-2xl font-bold text-foreground">
-              EduNation<span className="text-orange">.</span>
+              BatiX<span className="text-orange">.</span>
             </h1>
           </div>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Button variant="nav" size="sm">Home</Button>
-            <Button variant="nav" size="sm">Programs</Button>
-            <Button variant="nav" size="sm">Courses</Button>
-            <Button variant="nav" size="sm">Blog</Button>
+            <Button variant="nav" size="sm">
+              Home
+            </Button>
+            <Button variant="nav" size="sm">
+              Sejarah
+            </Button>
+            <Button variant="nav" size="sm">
+              Jenis
+            </Button>
+            <Button variant="nav" size="sm">
+              Rawr
+            </Button>
           </nav>
 
-          {/* Sign Up Button */}
+          {/* Daftar Sekarang Button */}
           <div className="flex items-center">
             <Button variant="hero" size="default">
-              Sign Up
+              Daftar Sekarang
             </Button>
           </div>
         </div>
