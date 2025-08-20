@@ -7,7 +7,6 @@ import CulturalValueSection from "@/components/CulturalValueSection";
 import ModernBatikSection from "@/components/ModernBatikSection";
 import WorkshopSection from "@/components/WorkshopSection";
 import CallToActionSection from "@/components/CallToActionSection";
-import ProgramsSection from "@/components/ProgramsSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -22,7 +21,6 @@ const Index = () => {
       <ModernBatikSection />
       <WorkshopSection />
       <CallToActionSection />
-      <ProgramsSection />
       <Footer />
     </div>
   );

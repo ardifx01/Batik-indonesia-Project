@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import Logo from "@/assets/logo_B_nobg.png";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -10,7 +11,8 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center ">
+            <img src={Logo} alt="Logo" className="h-20 w-20" />
             <h1 className="text-2xl font-bold text-foreground">
               BatiX<span className="text-orange">.</span>
             </h1>
@@ -25,21 +27,19 @@ const Header = () => {
               Sejarah
             </Button>
             <Button variant="nav" size="sm">
-              Jenis
+              Belajar
             </Button>
             <Button variant="nav" size="sm">
-              Rawr
+              Toko
+            </Button>
+            <Button variant="nav" size="sm">
+              Blog
             </Button>
           </nav>
 
           {/* Theme Toggle and Daftar Sekarang Button */}
           <div className="flex items-center gap-3">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="h-9 w-9"
-            >
+            <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="h-9 w-9">
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
