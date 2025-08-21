@@ -10,7 +10,7 @@ const MotifSection = () => {
       philosophy: "Keberanian dan Kekuatan",
       description: "Motif diagonal yang melambangkan ombak laut yang tak pernah putus, mewakili semangat yang pantang menyerah.",
       color: "orange",
-      pattern: "Diagonal berulang"
+      pattern: "Diagonal berulang",
     },
     {
       name: "Kawung",
@@ -18,7 +18,7 @@ const MotifSection = () => {
       philosophy: "Kesucian dan Keluhuran",
       description: "Motif berbentuk bulat yang terinspirasi dari buah aren, melambangkan kesucian hati dan pikiran.",
       color: "purple",
-      pattern: "Lingkaran geometris"
+      pattern: "Lingkaran geometris",
     },
     {
       name: "Mega Mendung",
@@ -26,7 +26,7 @@ const MotifSection = () => {
       philosophy: "Kesabaran dan Ketenangan",
       description: "Motif awan yang melambangkan kesabaran dalam menghadapi badai kehidupan.",
       color: "turquoise",
-      pattern: "Awan berlapis"
+      pattern: "Awan berlapis",
     },
     {
       name: "Truntum",
@@ -34,21 +34,18 @@ const MotifSection = () => {
       philosophy: "Cinta yang Tumbuh",
       description: "Motif bunga yang melambangkan cinta kasih yang terus tumbuh dan berkembang.",
       color: "pink",
-      pattern: "Bunga kecil"
-    }
+      pattern: "Bunga kecil",
+    },
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-background" id="galeri">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Galeri <span className="text-turquoise">Motif Batik</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Setiap motif batik memiliki filosofi dan makna yang mendalam. 
-            Jelajahi keindahan dan kebijaksanaan yang tersimpan dalam setiap goresan.
-          </p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Setiap motif batik memiliki filosofi dan makna yang mendalam. Jelajahi keindahan dan kebijaksanaan yang tersimpan dalam setiap goresan.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
@@ -63,21 +60,19 @@ const MotifSection = () => {
                   {motif.region}
                 </Badge>
               </div>
-              
+
               <div className="space-y-3">
                 <div>
                   <h4 className={`text-sm font-semibold text-${motif.color} mb-1`}>Filosofi</h4>
                   <p className="text-sm text-foreground font-medium">{motif.philosophy}</p>
                 </div>
-                
+
                 <div>
-                  <h4 className="text-sm font-semibold text-muted-foreground mb-1">Pola</h4>
+                  <h4 className="text-sm font-semibold text-muted-foreground mb-1 ">Pola</h4>
                   <p className="text-sm text-muted-foreground">{motif.pattern}</p>
                 </div>
-                
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {motif.description}
-                </p>
+
+                <p className="text-sm text-muted-foreground leading-relaxed">{motif.description}</p>
               </div>
             </Card>
           ))}
@@ -85,13 +80,9 @@ const MotifSection = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h3 className="text-3xl font-bold text-foreground mb-6">
-              Lebih dari 3000 Motif Tradisional
-            </h3>
+            <h3 className="text-3xl font-bold text-foreground mb-6">Lebih dari 3000 Motif Tradisional</h3>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Indonesia memiliki ribuan motif batik yang tersebar di seluruh nusantara. 
-              Setiap daerah memiliki ciri khas dan filosofi yang unik, mencerminkan 
-              kearifan lokal dan nilai-nilai budaya setempat.
+              Indonesia memiliki ribuan motif batik yang tersebar di seluruh nusantara. Setiap daerah memiliki ciri khas dan filosofi yang unik, mencerminkan kearifan lokal dan nilai-nilai budaya setempat.
             </p>
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
@@ -115,7 +106,7 @@ const MotifSection = () => {
               Jelajahi Semua Motif
             </Button>
           </div>
-          
+
           <div className="relative">
             <div className="bg-gradient-hero rounded-2xl p-8 border border-border">
               <h4 className="text-xl font-bold text-foreground mb-4">Tahukah Anda?</h4>

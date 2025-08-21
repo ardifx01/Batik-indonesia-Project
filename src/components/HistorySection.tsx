@@ -7,45 +7,42 @@ const HistorySection = () => {
       year: "4 - 13 Abad",
       title: "Era Kerajaan Hindu-Buddha",
       description: "Batik mulai berkembang sebagai busana kerajaan dengan motif-motif sakral dan spiritual.",
-      highlight: "Awal Mula"
+      highlight: "Awal Mula",
     },
     {
       year: "14 - 15 Abad",
       title: "Era Majapahit",
       description: "Teknik batik tulis mencapai puncaknya dengan motif-motif klasik yang masih digunakan hingga kini.",
-      highlight: "Puncak Klasik"
+      highlight: "Puncak Klasik",
     },
     {
       year: "16 - 19 Abad",
       title: "Era Kesultanan",
       description: "Batik menjadi identitas kerajaan dengan aturan ketat tentang motif yang boleh digunakan.",
-      highlight: "Era Keemasan"
+      highlight: "Era Keemasan",
     },
     {
       year: "20 Abad",
       title: "Era Modern",
       description: "Batik cap ditemukan, memungkinkan produksi massal dan penyebaran ke seluruh lapisan masyarakat.",
-      highlight: "Revolusi"
+      highlight: "Revolusi",
     },
     {
       year: "2009",
       title: "Pengakuan UNESCO",
       description: "Batik Indonesia diakui sebagai Masterpiece of Oral and Intangible Heritage of Humanity.",
-      highlight: "Dunia"
-    }
+      highlight: "Dunia",
+    },
   ];
 
   return (
-    <section className="py-20 bg-background-secondary">
+    <section className="py-20 bg-background-secondary" id="sejarah">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Perjalanan <span className="text-purple">Sejarah Batik</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ikuti jejak sejarah batik dari era kerajaan hingga pengakuan dunia internasional. 
-            Sebuah perjalanan panjang yang penuh makna dan transformasi.
-          </p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Ikuti jejak sejarah batik dari era kerajaan hingga pengakuan dunia internasional. Sebuah perjalanan panjang yang penuh makna dan transformasi.</p>
         </div>
 
         <div className="space-y-8">
@@ -69,13 +66,8 @@ const HistorySection = () => {
 
         <div className="mt-16 text-center">
           <div className="bg-gradient-purple rounded-2xl p-12 text-white">
-            <h3 className="text-3xl font-bold mb-4">
-              Lebih dari 1000 Tahun Sejarah
-            </h3>
-            <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-              Batik telah melewati berbagai zaman, beradaptasi dengan perubahan waktu 
-              namun tetap mempertahankan esensi dan nilai-nilai tradisionalnya.
-            </p>
+            <h3 className="text-3xl font-bold mb-4">Lebih dari 1000 Tahun Sejarah</h3>
+            <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">Batik telah melewati berbagai zaman, beradaptasi dengan perubahan waktu namun tetap mempertahankan esensi dan nilai-nilai tradisionalnya.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
                 <div className="text-3xl font-bold">1000+</div>

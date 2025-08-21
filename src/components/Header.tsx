@@ -5,7 +5,10 @@ import Logo from "@/assets/logo_B_nobg.png";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
-
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    section?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -20,20 +23,17 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Button variant="nav" size="sm">
+            <Button variant="nav" size="sm" onClick={() => scrollToSection("home")}>
               Home
             </Button>
-            <Button variant="nav" size="sm">
+            <Button variant="nav" size="sm" onClick={() => scrollToSection("sejarah")}>
               Sejarah
             </Button>
-            <Button variant="nav" size="sm">
-              Belajar
+            <Button variant="nav" size="sm" onClick={() => scrollToSection("galeri")}>
+              Galeri
             </Button>
-            <Button variant="nav" size="sm">
-              Toko
-            </Button>
-            <Button variant="nav" size="sm">
-              Blog
+            <Button variant="nav" size="sm" onClick={() => scrollToSection("budaya_tradisi")}>
+              Budaya & Tradisi
             </Button>
           </nav>
 
@@ -43,9 +43,6 @@ const Header = () => {
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
-            </Button>
-            <Button variant="hero" size="default">
-              Daftar Sekarang
             </Button>
           </div>
         </div>

@@ -4,7 +4,7 @@ import batik from "@/assets/batikdua.glb";
 import "@google/model-viewer";
 const Hero = () => {
   return (
-    <section className="min-h-screen bg-gradient-hero flex items-center pt-16">
+    <section className="min-h-screen bg-gradient-hero flex items-center pt-16" id="home">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
