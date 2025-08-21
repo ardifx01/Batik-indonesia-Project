@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -7,16 +7,46 @@ import Logo from "@/assets/logo_B_nobg.png";
 const Header = () => {
   const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
+  const sections = ["home", "sejarah", "galeri", "budaya_tradisi"];
+
+  // Scroll smooth ke section
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     section?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  // Observer untuk deteksi section aktif
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.4 } // 60% visible baru dianggap aktif
+    );
+
+    sections.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((id) => {
+        const section = document.getElementById(id);
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
+
   return (
     <>
       {/* Header Atas */}
-      <header className="fixed top-5 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border max-w-6xl mx-auto rounded-xl shadow-md shadow-stone-00/20 dark:shadow-slate-100/20">
+      <header className="fixed top-5 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border max-w-6xl mx-auto rounded-xl shadow-md shadow-stone-900/20 dark:shadow-slate-100/20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -29,18 +59,11 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Button variant="nav" size="sm" onClick={() => scrollToSection("home")}>
-                Home
-              </Button>
-              <Button variant="nav" size="sm" onClick={() => scrollToSection("sejarah")}>
-                Sejarah
-              </Button>
-              <Button variant="nav" size="sm" onClick={() => scrollToSection("galeri")}>
-                Galeri
-              </Button>
-              <Button variant="nav" size="sm" onClick={() => scrollToSection("budaya_tradisi")}>
-                Budaya & Tradisi
-              </Button>
+              {sections.map((id) => (
+                <Button key={id} variant="nav" size="sm" onClick={() => scrollToSection(id)} className={activeSection === id ? "text-orange font-bold" : "text-foreground"}>
+                  {id === "budaya_tradisi" ? "Budaya & Tradisi" : id.charAt(0).toUpperCase() + id.slice(1)}
+                </Button>
+              ))}
             </nav>
 
             {/* Theme Toggle & Burger */}
@@ -62,20 +85,13 @@ const Header = () => {
 
       {/* Mobile Navbar di Bottom */}
       {isOpen && (
-        <div className={`fixed bottom-0 left-0 right-0 z-50 bg-background border-t border-border shadow-lg md:hidden transform`}>
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t border-border shadow-lg md:hidden transform">
           <nav className="flex justify-around p-4">
-            <Button variant="nav" size="sm" onClick={() => scrollToSection("home")}>
-              Home
-            </Button>
-            <Button variant="nav" size="sm" onClick={() => scrollToSection("sejarah")}>
-              Sejarah
-            </Button>
-            <Button variant="nav" size="sm" onClick={() => scrollToSection("galeri")}>
-              Galeri
-            </Button>
-            <Button variant="nav" size="sm" onClick={() => scrollToSection("budaya_tradisi")}>
-              Budaya
-            </Button>
+            {sections.map((id) => (
+              <Button key={id} variant="nav" size="sm" onClick={() => scrollToSection(id)} className={activeSection === id ? "text-orange font-bold" : "text-foreground"}>
+                {id === "budaya_tradisi" ? "Budaya" : id.charAt(0).toUpperCase() + id.slice(1)}
+              </Button>
+            ))}
           </nav>
         </div>
       )}
