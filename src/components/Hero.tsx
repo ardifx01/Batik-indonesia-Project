@@ -10,7 +10,7 @@ const Hero = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Batik: Lebih dari Sekadar Kain <span className="text-purple">Sebuah Kisah Abadi.</span>
+              BatiX: Lebih dari Sekadar Kain <span className="text-purple">Sebuah Kisah Abadi.</span>
             </h1>
 
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
@@ -25,7 +25,7 @@ const Hero = () => {
 
               <div className="flex flex-col sm:flex-row gap-6 text-foreground">
                 <div>
-                  <div className="text-3xl font-bold text-orange">100+</div>
+                  <div className="text-3xl font-bold text-orange">15+</div>
                   <div className="text-sm text-muted-foreground">Jenis Batik </div>
                 </div>
                 <div>
