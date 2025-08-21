@@ -29,8 +29,8 @@ const Hero = () => {
                   <div className="text-sm text-muted-foreground">Jenis Batik </div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-purple">2M+</div>
-                  <div className="text-sm text-muted-foreground">Pengguna Batik</div>
+                  <div className="text-3xl font-bold text-purple">5K+</div>
+                  <div className="text-sm text-muted-foreground">Industri Batik</div>
                 </div>
               </div>
             </div>
