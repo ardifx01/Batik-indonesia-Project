@@ -11,13 +11,12 @@ const Header = () => {
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     section?.scrollIntoView({ behavior: "smooth", block: "start" });
-    setIsOpen(false); // otomatis close setelah klik
   };
 
   return (
     <>
       {/* Header Atas */}
-      <header className="fixed top-5 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border max-w-6xl mx-auto rounded-xl shadow-md shadow-stone-500/20 dark:shadow-slate-100/20">
+      <header className="fixed top-5 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border max-w-6xl mx-auto rounded-xl shadow-md shadow-stone-00/20 dark:shadow-slate-100/20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
