@@ -34,6 +34,7 @@ const MotifSection = () => {
       philosophy: "Cinta yang Tumbuh",
       description: "Motif bunga yang melambangkan cinta kasih yang terus tumbuh dan berkembang.",
       color: "pink",
+      background: "blue",
       pattern: "Bunga kecil",
     },
   ];
@@ -50,7 +51,7 @@ const MotifSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {motifs.map((motif, index) => (
-            <Card key={index} className={`p-6 hover:shadow-lg transition-all duration-300 border-border bg-gradient-${motif.color} bg-opacity-5`}>
+            <Card key={index} className={`p-6  hover:shadow-lg hover:shadow-${motif.color} transition-all duration-300 border-border  bg-opacity-5 `}>
               <div className="text-center mb-4">
                 <div className={`w-20 h-20 mx-auto mb-4 bg-${motif.color} rounded-full flex items-center justify-center`}>
                   <div className="w-12 h-12 bg-white/20 rounded-full"></div>
@@ -68,11 +69,11 @@ const MotifSection = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-semibold text-muted-foreground mb-1 ">Pola</h4>
-                  <p className="text-sm text-muted-foreground">{motif.pattern}</p>
+                  <h4 className="text-sm font-semibold text-secondary-foreground mb-1 ">Pola</h4>
+                  <p className="text-sm text-secondary-foreground">{motif.pattern}</p>
                 </div>
 
-                <p className="text-sm text-muted-foreground leading-relaxed">{motif.description}</p>
+                <p className="text-sm text-secondary-foreground leading-relaxed">{motif.description}</p>
               </div>
             </Card>
           ))}

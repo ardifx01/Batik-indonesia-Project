@@ -37,7 +37,7 @@ const HistorySection = () => {
 
   return (
     <section className="py-20 bg-background-secondary" id="sejarah">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8" data-aos="fade-up">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Perjalanan <span className="text-purple">Sejarah Batik</span>
