@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import EcoBatikPage from "./pages/EcoBatikPage";
+import HistoryPage from "./pages/HistoryPage";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -33,6 +34,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/eco-batik" element={<EcoBatikPage />} />
+              <Route path="/sejarah" element={<HistoryPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
