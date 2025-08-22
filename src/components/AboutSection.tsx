@@ -7,18 +7,18 @@ const AboutSection = () => {
     {
       icon: Heart,
       title: "Warisan Turun Temurun",
-      description: "Batik telah diwariskan dari generasi ke generasi dengan teknik dan filosofi yang mendalam."
+      description: "Batik telah diwariskan dari generasi ke generasi dengan teknik dan filosofi yang mendalam.",
     },
     {
       icon: Sparkles,
       title: "Seni yang Hidup",
-      description: "Setiap motif batik memiliki makna spiritual dan cerita yang menghubungkan kita dengan leluhur."
+      description: "Setiap motif batik memiliki makna spiritual dan cerita yang menghubungkan kita dengan leluhur.",
     },
     {
       icon: Globe,
       title: "Diakui UNESCO",
-      description: "Batik Indonesia telah diakui UNESCO sebagai Masterpiece of Oral and Intangible Heritage."
-    }
+      description: "Batik Indonesia telah diakui UNESCO sebagai Masterpiece of Oral and Intangible Heritage.",
+    },
   ];
 
   return (
@@ -29,8 +29,7 @@ const AboutSection = () => {
             Mengapa Batik <span className="text-orange">Istimewa?</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Batik bukan sekadar kain bermotif. Ini adalah perwujudan filosofi hidup, spiritualitas, 
-            dan identitas budaya yang telah mengakar dalam jiwa bangsa Indonesia selama berabad-abad.
+            Batik bukan sekadar kain bermotif. Ini adalah perwujudan filosofi hidup, spiritualitas, dan identitas budaya yang telah mengakar dalam jiwa bangsa Indonesia selama berabad-abad.
           </p>
         </div>
 
@@ -46,17 +45,11 @@ const AboutSection = () => {
           ))}
         </div>
 
-        <div className="bg-gradient-hero rounded-2xl p-12 text-center">
-          <h3 className="text-3xl font-bold text-foreground mb-4">
-            Setiap Motif Bercerita
-          </h3>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Dari motif parang yang melambangkan keberanian, hingga kawung yang mewakili kesucian. 
-            Batik adalah bahasa visual yang menyampaikan nilai-nilai luhur nenek moyang.
+        <div className="bg-gradient-hero rounded-2xl p-12 text-center border-b-2 border-orange ">
+          <h3 className="text-3xl font-bold text-foreground mb-4">Setiap Motif Bercerita</h3>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto ">
+            Dari motif parang yang melambangkan keberanian, hingga kawung yang mewakili kesucian. Batik adalah bahasa visual yang menyampaikan nilai-nilai luhur nenek moyang.
           </p>
-          <Button variant="contact" size="lg">
-            Pelajari Lebih Lanjut
-          </Button>
         </div>
       </div>
     </section>

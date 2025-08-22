@@ -2,68 +2,67 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shirt, Briefcase, Sparkles, Palette } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ModernBatikSection = () => {
+  const navigate = useNavigate();
   const modernApplications = [
     {
       icon: Shirt,
       title: "Fashion Contemporary",
       description: "Batik hadir dalam desain modern untuk dress, blazer, dan aksesori fashion yang trendi.",
       examples: ["Dress Batik Modern", "Blazer Kombinasi", "Tas & Sepatu Batik"],
-      color: "orange"
+      color: "orange",
     },
     {
       icon: Briefcase,
       title: "Busana Formal",
       description: "Batik menjadi pilihan utama untuk acara formal, memberikan kesan elegan dan berbudaya.",
       examples: ["Kemeja Kantor", "Jas Batik", "Seragam Corporate"],
-      color: "purple"
+      color: "purple",
     },
     {
       icon: Sparkles,
       title: "High Fashion",
       description: "Designer internasional mengadopsi motif batik dalam koleksi haute couture mereka.",
       examples: ["Runway Internasional", "Designer Collaboration", "Luxury Brand"],
-      color: "turquoise"
+      color: "turquoise",
     },
     {
       icon: Palette,
       title: "Fusion Design",
       description: "Perpaduan batik dengan teknik modern menciptakan inovasi baru dalam dunia fashion.",
       examples: ["Digital Print Batik", "Eco-Friendly Batik", "Smart Textile"],
-      color: "pink"
-    }
+      color: "pink",
+    },
   ];
 
   const trendingStyles = [
     {
       name: "Batik Minimalis",
       description: "Motif batik sederhana dengan warna netral untuk gaya kasual modern",
-      popularity: "95%"
+      popularity: "95%",
     },
     {
       name: "Batik Athleisure",
       description: "Kombinasi batik dengan material sporty untuk aktivitas sehari-hari",
-      popularity: "87%"
+      popularity: "87%",
     },
     {
       name: "Batik Couture",
       description: "Batik premium dengan cutting modern untuk acara formal eksklusif",
-      popularity: "92%"
-    }
+      popularity: "92%",
+    },
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-background" id="eco-batik">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Batik <span className="text-orange">Kontemporer</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Melihat bagaimana batik bertransformasi dan beradaptasi dengan dunia fashion modern, 
-            tetap mempertahankan nilai tradisional sambil mengikuti tren global.
-          </p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Melihat bagaimana batik bertransformasi dan beradaptasi dengan dunia fashion modern, tetap mempertahankan nilai tradisional sambil mengikuti tren global.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
@@ -87,12 +86,9 @@ const ModernBatikSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h3 className="text-3xl font-bold text-foreground mb-6">
-              Tren Fashion Batik 2024
-            </h3>
+            <h3 className="text-3xl font-bold text-foreground mb-6">Tren Fashion Batik 2024</h3>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Batik terus berkembang mengikuti tren fashion dunia. Dari streetwear hingga haute couture, 
-              batik membuktikan fleksibilitasnya dalam berbagai gaya fashion modern.
+              Batik terus berkembang mengikuti tren fashion dunia. Dari streetwear hingga haute couture, batik membuktikan fleksibilitasnya dalam berbagai gaya fashion modern.
             </p>
             <div className="space-y-6">
               {trendingStyles.map((style, index) => (
@@ -127,10 +123,7 @@ const ModernBatikSection = () => {
                 <div className="text-sm opacity-80">Brand Global</div>
               </div>
             </div>
-            <p className="text-sm opacity-90 mb-6">
-              Batik Indonesia telah menjadi inspirasi bagi designer internasional dan hadir 
-              di berbagai fashion week dunia.
-            </p>
+            <p className="text-sm opacity-90 mb-6">Batik Indonesia telah menjadi inspirasi bagi designer internasional dan hadir di berbagai fashion week dunia.</p>
             <Button variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
               Lihat Koleksi Terbaru
             </Button>
@@ -138,18 +131,13 @@ const ModernBatikSection = () => {
         </div>
 
         <div className="bg-gradient-hero rounded-2xl p-12 text-center border border-border">
-          <h3 className="text-3xl font-bold text-foreground mb-4">
-            Sustainable Fashion dengan Batik
-          </h3>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Batik tradisional yang dibuat dengan pewarna alami dan teknik ramah lingkungan 
-            menjadi solusi untuk fashion berkelanjutan di era modern.
-          </p>
+          <h3 className="text-3xl font-bold text-foreground mb-4">Sustainable Fashion dengan Batik</h3>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Batik tradisional yang dibuat dengan pewarna alami dan teknik ramah lingkungan menjadi solusi untuk fashion berkelanjutan di era modern.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="contact" size="lg">
+            <Button onClick={() => navigate("/eco-batik")} variant="contact" size="lg">
               Jelajahi Eco-Batik
             </Button>
-            <Button variant="outline" size="lg">
+            <Button onClick={() => window.open("https://www.youtube.com/results?search_query=Belajar+Membatik", "_blank")} variant="outline" size="lg">
               Belajar Membatik
             </Button>
           </div>

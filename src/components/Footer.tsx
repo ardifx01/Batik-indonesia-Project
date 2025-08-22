@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import Logo from "@/assets/logo_B_nobg.png";
 
 const Footer = () => {
   return (
@@ -6,10 +7,13 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           {/* Company Info */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-foreground">
-              BatiX<span className="text-orange">.</span>
-            </h3>
+          <div className="flex-shrink-0">
+            <div className="flex">
+              <img src={Logo} alt="Logo" className="h-10 w-10" />
+              <h3 className="text-2xl font-bold text-foreground">
+                atiX<span className="text-orange">.</span>
+              </h3>
+            </div>
             <p className="text-muted-foreground text-sm leading-relaxed">Menjelajahi keindahan motif, filosofi, dan makna di balik setiap helai kain batik Indonesia.</p>
           </div>
 

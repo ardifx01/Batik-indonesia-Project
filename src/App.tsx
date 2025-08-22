@@ -11,6 +11,7 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import ScrollToTop from "./components/ScrollToTop"; // ⬅️ import
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/eco-batik" element={<EcoBatikPage />} />
