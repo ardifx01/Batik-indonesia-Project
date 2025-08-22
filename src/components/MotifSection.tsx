@@ -1,8 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 
 const MotifSection = () => {
+  const navigate = useNavigate();
   const motifs = [
     {
       name: "Parang",
@@ -103,7 +105,7 @@ const MotifSection = () => {
                 <div className="text-sm text-muted-foreground">Makna Filosofi</div>
               </div>
             </div>
-            <Button variant="contact" size="lg">
+            <Button variant="contact" size="lg" onClick={() => navigate("/galeri")}>
               Jelajahi Semua Motif
             </Button>
           </div>

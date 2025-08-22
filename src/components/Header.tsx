@@ -51,8 +51,6 @@ const Header = () => {
       setActiveSection(id);
       navigate(id === "home" ? "/" : `/${id}`);
     }
-
-    setIsOpen(false);
   };
 
   // Observer section aktif (hanya di home)
