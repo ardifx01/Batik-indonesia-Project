@@ -23,7 +23,7 @@ const AboutSection = () => {
 
   return (
     <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8" data-aos="fade-up">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Mengapa Batik <span className="text-orange">Istimewa?</span>
@@ -33,7 +33,7 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-16" data-aos="fade-left" data-aos-duration="500">
           {features.map((feature, index) => (
             <Card key={index} className="p-8 text-center hover:shadow-lg transition-all duration-300 border-border">
               <div className="w-16 h-16 mx-auto mb-6 bg-gradient-orange rounded-full flex items-center justify-center">

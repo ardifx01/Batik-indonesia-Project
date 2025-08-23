@@ -13,6 +13,7 @@ const MotifSection = () => {
       description: "Motif diagonal yang melambangkan ombak laut yang tak pernah putus, mewakili semangat yang pantang menyerah.",
       color: "orange",
       pattern: "Diagonal berulang",
+      bg: "orange",
     },
     {
       name: "Kawung",
@@ -21,6 +22,7 @@ const MotifSection = () => {
       description: "Motif berbentuk bulat yang terinspirasi dari buah aren, melambangkan kesucian hati dan pikiran.",
       color: "purple",
       pattern: "Lingkaran geometris",
+      bg: "orange",
     },
     {
       name: "Mega Mendung",
@@ -29,6 +31,7 @@ const MotifSection = () => {
       description: "Motif awan yang melambangkan kesabaran dalam menghadapi badai kehidupan.",
       color: "turquoise",
       pattern: "Awan berlapis",
+      bg: "orange",
     },
     {
       name: "Truntum",
@@ -36,7 +39,7 @@ const MotifSection = () => {
       philosophy: "Cinta yang Tumbuh",
       description: "Motif bunga yang melambangkan cinta kasih yang terus tumbuh dan berkembang.",
       color: "pink",
-      background: "blue",
+      bg: "orange",
       pattern: "Bunga kecil",
     },
   ];
@@ -53,7 +56,7 @@ const MotifSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {motifs.map((motif, index) => (
-            <Card key={index} className={`p-6  hover:shadow-lg hover:shadow-${motif.color} transition-all duration-300 border-border  bg-opacity-5 `}>
+            <Card key={index} className={`p-6 hover:shadow-lg lg:hover:rotate-12  transition-all duration-300 border-border bg-opacity-5 bg-white `}>
               <div className="text-center mb-4">
                 <div className={`w-20 h-20 mx-auto mb-4 bg-${motif.color} rounded-full flex items-center justify-center`}>
                   <div className="w-12 h-12 bg-white/20 rounded-full"></div>

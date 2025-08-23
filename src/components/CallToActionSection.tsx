@@ -9,29 +9,29 @@ const CallToActionSection = () => {
       title: "Pelajari Batik",
       description: "Mulai perjalanan Anda untuk memahami keindahan dan filosofi batik Indonesia",
       action: "Mulai Belajar",
-      color: "orange"
+      color: "orange",
     },
     {
       icon: Share2,
       title: "Sebarkan Warisan",
       description: "Bagikan keindahan batik kepada dunia melalui media sosial dan komunitas",
       action: "Bagikan Sekarang",
-      color: "purple"
+      color: "purple",
     },
     {
       icon: Users,
       title: "Gabung Komunitas",
       description: "Bergabunglah dengan komunitas pecinta batik dari seluruh Indonesia",
       action: "Gabung Komunitas",
-      color: "turquoise"
+      color: "turquoise",
     },
     {
       icon: Heart,
       title: "Dukung Pengrajin",
       description: "Dukung pengrajin batik lokal dengan membeli produk batik asli Indonesia",
       action: "Beli Batik Asli",
-      color: "pink"
-    }
+      color: "pink",
+    },
   ];
 
   return (
@@ -41,10 +41,7 @@ const CallToActionSection = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Mari Lestarikan <span className="text-orange">Warisan Batik</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Batik adalah milik kita bersama. Setiap tindakan kecil Anda berkontribusi 
-            dalam melestarikan warisan budaya tak ternilai ini untuk generasi mendatang.
-          </p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Batik adalah milik kita bersama. Setiap tindakan kecil Anda berkontribusi dalam melestarikan warisan budaya tak ternilai ini untuk generasi mendatang.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
@@ -63,13 +60,8 @@ const CallToActionSection = () => {
         </div>
 
         <div className="bg-gradient-hero rounded-2xl p-12 text-center border border-border mb-16">
-          <h3 className="text-3xl font-bold text-foreground mb-4">
-            Batik untuk Indonesia yang Lebih Baik
-          </h3>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Dengan melestarikan batik, kita tidak hanya menjaga tradisi, tetapi juga 
-            memberdayakan ekonomi kreatif dan identitas budaya bangsa.
-          </p>
+          <h3 className="text-3xl font-bold text-foreground mb-4">Batik untuk Indonesia yang Lebih Baik</h3>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Dengan melestarikan batik, kita tidak hanya menjaga tradisi, tetapi juga memberdayakan ekonomi kreatif dan identitas budaya bangsa.</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="text-3xl font-bold text-orange">1M+</div>
@@ -101,9 +93,7 @@ const CallToActionSection = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <Card className="p-8 bg-gradient-orange text-white border-0">
             <h4 className="text-xl font-bold mb-4">Untuk Generasi Muda</h4>
-            <p className="text-sm opacity-90 mb-6">
-              Ajak generasi muda untuk mencintai dan melestarikan batik sebagai identitas budaya.
-            </p>
+            <p className="text-sm opacity-90 mb-6">Ajak generasi muda untuk mencintai dan melestarikan batik sebagai identitas budaya.</p>
             <Button variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
               Program Edukasi
             </Button>
@@ -111,9 +101,7 @@ const CallToActionSection = () => {
 
           <Card className="p-8 bg-gradient-purple text-white border-0">
             <h4 className="text-xl font-bold mb-4">Untuk Pengrajin</h4>
-            <p className="text-sm opacity-90 mb-6">
-              Dukung pengrajin batik dengan membeli produk asli dan mengapresiasi karya mereka.
-            </p>
+            <p className="text-sm opacity-90 mb-6">Dukung pengrajin batik dengan membeli produk asli dan mengapresiasi karya mereka.</p>
             <Button variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
               Beli Batik Asli
             </Button>
@@ -121,9 +109,7 @@ const CallToActionSection = () => {
 
           <Card className="p-8 bg-gradient-turquoise text-white border-0">
             <h4 className="text-xl font-bold mb-4">Untuk Dunia</h4>
-            <p className="text-sm opacity-90 mb-6">
-              Perkenalkan keindahan batik Indonesia kepada dunia internasional.
-            </p>
+            <p className="text-sm opacity-90 mb-6">Perkenalkan keindahan batik Indonesia kepada dunia internasional.</p>
             <Button variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
               Share ke Dunia
             </Button>
