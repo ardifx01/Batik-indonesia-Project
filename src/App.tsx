@@ -10,6 +10,9 @@ import EcoBatikPage from "./pages/EcoBatikPage";
 import HistoryPage from "./pages/HistoryPage";
 import GaleriPage from "./pages/GaleriPage";
 import BudayaTradisiPage from "./pages/BudayaTradisiPage";
+import AuthPage from "./pages/AuthPage";
+import DashboardPage from "./pages/DashboardPage";
+import { AuthProvider } from "./hooks/useAuth";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -28,22 +31,26 @@ const App = () => (
   (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <ScrollToTop />
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/eco-batik" element={<EcoBatikPage />} />
-              <Route path="/sejarah" element={<HistoryPage />} />
-              <Route path="/galeri" element={<GaleriPage />} />
-              <Route path="/budaya_tradisi" element={<BudayaTradisiPage />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </TooltipProvider>
+        <AuthProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <ScrollToTop />
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/eco-batik" element={<EcoBatikPage />} />
+                <Route path="/sejarah" element={<HistoryPage />} />
+                <Route path="/galeri" element={<GaleriPage />} />
+                <Route path="/budaya_tradisi" element={<BudayaTradisiPage />} />
+                <Route path="/auth" element={<AuthPage />} />
+                <Route path="/dashboard" element={<DashboardPage />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </TooltipProvider>
+        </AuthProvider>
       </ThemeProvider>
     </QueryClientProvider>
   )
