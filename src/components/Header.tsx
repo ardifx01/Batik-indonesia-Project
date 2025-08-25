@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Logo from "@/assets/logo_B_nobg.png";
-import { useAuth } from "@/hooks/useAuth";
 
 const sections = ["home", "sejarah", "galeri", "budaya_tradisi", "eco-batik"] as const;
 type Section = (typeof sections)[number];
@@ -15,7 +14,6 @@ const Header = () => {
   const [activeSection, setActiveSection] = useState<Section>("home");
   const location = useLocation();
   const navigate = useNavigate();
-  const { user } = useAuth();
 
   // Reset scroll & set active berdasarkan URL saat ini
   useEffect(() => {
@@ -107,18 +105,8 @@ const Header = () => {
               ))}
             </nav>
 
-            {/* Auth & Theme Toggle & Burger */}
+            {/* Theme Toggle & Burger */}
             <div className="flex items-center gap-3">
-              {user ? (
-                <Button variant="outline" size="sm" asChild>
-                  <Link to="/dashboard">Dashboard</Link>
-                </Button>
-              ) : (
-                <Button variant="outline" size="sm" asChild>
-                  <Link to="/auth">Masuk / Daftar</Link>
-                </Button>
-              )}
-              
               <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="h-9 w-9">
                 <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                 <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
