@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import EcoBatikPage from "./pages/EcoBatikPage";
 import HistoryPage from "./pages/HistoryPage";
 import GaleriPage from "./pages/GaleriPage";
+import BudayaTradisiPage from "./pages/BudayaTradisiPage";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -37,6 +38,7 @@ const App = () => (
               <Route path="/eco-batik" element={<EcoBatikPage />} />
               <Route path="/sejarah" element={<HistoryPage />} />
               <Route path="/galeri" element={<GaleriPage />} />
+              <Route path="/budaya_tradisi" element={<BudayaTradisiPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
