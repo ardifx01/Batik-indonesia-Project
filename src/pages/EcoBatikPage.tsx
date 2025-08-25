@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Leaf, Recycle, Heart, Globe } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import batik from "@/assets/batik_megamendung.glb";
+import batik from "@/assets/3D/batik_megamendung.glb";
 const EcoBatikPage = () => {
   const sustainableFeatures = [
     {

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-student.jpg";
-import batik from "@/assets/batikdua.glb";
+import batik from "@/assets/3D/batikdua.glb";
 import "@google/model-viewer";
 const Hero = () => {
   return (
