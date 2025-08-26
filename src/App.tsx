@@ -21,14 +21,15 @@ import ScrollToTop from "./components/ScrollToTop"; // ⬅️ import
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000, // durasi animasi
       easing: "ease-in-out",
     });
-  }, []),
-  (
+  }, []);
+
+  return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
         <AuthProvider>
@@ -53,7 +54,7 @@ const App = () => (
         </AuthProvider>
       </ThemeProvider>
     </QueryClientProvider>
-  )
-);
+  );
+};
 
 export default App;
