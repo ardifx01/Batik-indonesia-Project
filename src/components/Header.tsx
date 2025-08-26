@@ -107,14 +107,13 @@ const Header = () => {
               ))}
             </nav>
 
-            {/* Auth & Theme Toggle & Burger */}
             <div className="flex items-center gap-3">
               {user ? (
-                <Button variant="hero" size="sm" asChild>
+                <Button className="hidden md:flex md:text-center" variant="outlinorange" size="sm" asChild>
                   <Link to="/dashboard">Dashboard</Link>
                 </Button>
               ) : (
-                <Button variant="hero" size="sm" asChild>
+                <Button className="hidden md:flex md:text-center" variant="outlinorange" size="sm" asChild>
                   <Link to="/auth">Masuk / Daftar</Link>
                 </Button>
               )}
@@ -135,14 +134,46 @@ const Header = () => {
 
       {/* Mobile Navbar */}
       {isOpen && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t border-border shadow-lg md:hidden">
-          <nav className="flex justify-around p-4">
-            {sections.map((id) => (
-              <Button key={id} variant="nav" size="sm" onClick={() => handleNavClick(id)} className={activeSection === id ? "text-orange font-bold" : "text-foreground"} aria-current={activeSection === id ? "page" : undefined}>
-                {id === "budaya_tradisi" ? "Budaya" : id === "eco-batik" ? "Eco-Batik" : id.charAt(0).toUpperCase() + id.slice(1)}
-              </Button>
-            ))}
-          </nav>
+        <div className="fixed inset-0 z-40 bg-black/40 md:hidden" onClick={() => setIsOpen(false)}>
+          {/* Drawer */}
+          <div className="absolute top-0 right-0 h-full w-64 bg-background shadow-lg p-6 flex flex-col gap-6" onClick={(e) => e.stopPropagation()}>
+            {/* Close button */}
+            <button className="self-end p-2 rounded-lg border border-border" onClick={() => setIsOpen(false)}>
+              <X className="h-5 w-5" />
+            </button>
+
+            {/* Navigation */}
+            <nav className="flex flex-col gap-4 mt-4">
+              {sections.map((id) => (
+                <Button
+                  key={id}
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    handleNavClick(id);
+                    setIsOpen(false);
+                  }}
+                  className={`justify-start ${activeSection === id ? "text-orange font-bold" : "text-foreground"}`}
+                  aria-current={activeSection === id ? "page" : undefined}
+                >
+                  {id === "budaya_tradisi" ? "Budaya & Tradisi" : id === "eco-batik" ? "Eco-Batik" : id.charAt(0).toUpperCase() + id.slice(1)}
+                </Button>
+              ))}
+            </nav>
+
+            {/* Auth Button */}
+            <div className="mt-auto">
+              {user ? (
+                <Button variant="hero" size="sm" asChild className="w-full">
+                  <Link to="/dashboard">Dashboard</Link>
+                </Button>
+              ) : (
+                <Button variant="hero" size="sm" asChild className="w-full">
+                  <Link to="/auth">Masuk / Daftar</Link>
+                </Button>
+              )}
+            </div>
+          </div>
         </div>
       )}
     </>
