@@ -26,15 +26,10 @@ const DashboardPage = () => {
   }, []);
 
   useEffect(() => {
-    if (!loading && !user) {
-      navigate("/auth");
-      return;
-    }
-
     if (user) {
       fetchProfile();
     }
-  }, [user, loading, navigate]);
+  }, [user]);
 
   const fetchProfile = async () => {
     if (!user) return;
@@ -62,19 +57,6 @@ const DashboardPage = () => {
     navigate("/");
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-pulse text-muted-foreground">Memuat...</div>
-        </div>
-      </div>
-    );
-  }
-
-  if (!user) {
-    return null;
-  }
 
   const features = [
     {
