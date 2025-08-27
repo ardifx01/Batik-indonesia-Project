@@ -11,7 +11,7 @@ import HistoryPage from "./pages/HistoryPage";
 import GaleriPage from "./pages/GaleriPage";
 import BudayaTradisiPage from "./pages/BudayaTradisiPage";
 import AuthPage from "./pages/AuthPage";
-import DashboardPage from "./pages/DashboardPage";
+import ProfilePage from "./pages/ProfilePage";
 import { AuthProvider } from "./hooks/useAuth";
 import "aos/dist/aos.css";
 import AOS from "aos";
@@ -45,7 +45,7 @@ const App = () => {
                 <Route path="/galeri" element={<GaleriPage />} />
                 <Route path="/budaya_tradisi" element={<BudayaTradisiPage />} />
                 <Route path="/auth" element={<AuthPage />} />
-                <Route path="/dashboard" element={<DashboardPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>

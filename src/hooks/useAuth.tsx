@@ -2,6 +2,7 @@ import { useState, useEffect, createContext, useContext, ReactNode } from 'react
 import { User, Session } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
 
 interface AuthContextType {
   user: User | null;
@@ -137,6 +138,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         title: "Success",
         description: "Signed in successfully!",
       });
+
+      // Redirect to home page after successful login
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 1000);
 
       return { error: null };
     } catch (error) {

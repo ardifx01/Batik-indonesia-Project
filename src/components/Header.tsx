@@ -1,10 +1,18 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, User, LogOut } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import Logo from "@/assets/logo_B_nobg.png";
 import { useAuth } from "@/hooks/useAuth";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { supabase } from "@/integrations/supabase/client";
 
 const sections = ["home", "sejarah", "galeri", "budaya_tradisi", "eco-batik"] as const;
 type Section = (typeof sections)[number];
@@ -13,9 +21,10 @@ const Header = () => {
   const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<Section>("home");
+  const [userProfile, setUserProfile] = useState<{ full_name: string } | null>(null);
   const location = useLocation();
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
 
   // Reset scroll & set active berdasarkan URL saat ini
   useEffect(() => {
@@ -84,6 +93,38 @@ const Header = () => {
     };
   }, [location.pathname]);
 
+  // Fetch user profile
+  useEffect(() => {
+    if (user) {
+      fetchUserProfile();
+    } else {
+      setUserProfile(null);
+    }
+  }, [user]);
+
+  const fetchUserProfile = async () => {
+    if (!user) return;
+
+    try {
+      const { data, error } = await supabase
+        .from("profiles")
+        .select("full_name")
+        .eq("user_id", user.id)
+        .single();
+
+      if (!error && data) {
+        setUserProfile(data);
+      }
+    } catch (error) {
+      console.error("Error fetching profile:", error);
+    }
+  };
+
+  const handleLogout = async () => {
+    await signOut();
+    navigate("/");
+  };
+
   return (
     <>
       {/* Header */}
@@ -109,9 +150,24 @@ const Header = () => {
 
             <div className="flex items-center gap-3">
               {user ? (
-                <Button className="hidden md:flex md:text-center" variant="outlinorange" size="sm" asChild>
-                  <Link to="/dashboard">Dashboard</Link>
-                </Button>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outlinorange" size="sm" className="hidden md:flex">
+                      {userProfile?.full_name || "User"}
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-48">
+                    <DropdownMenuItem onClick={() => navigate("/profile")}>
+                      <User className="mr-2 h-4 w-4" />
+                      Profil
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleLogout}>
+                      <LogOut className="mr-2 h-4 w-4" />
+                      Keluar
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               ) : (
                 <Button className="hidden md:flex md:text-center" variant="outlinorange" size="sm" asChild>
                   <Link to="/auth">Masuk / Daftar</Link>
@@ -162,11 +218,18 @@ const Header = () => {
             </nav>
 
             {/* Auth Button */}
-            <div className="mt-auto">
+            <div className="mt-auto space-y-2">
               {user ? (
-                <Button variant="hero" size="sm" asChild className="w-full">
-                  <Link to="/dashboard">Dashboard</Link>
-                </Button>
+                <>
+                  <Button variant="ghost" size="sm" onClick={() => { navigate("/profile"); setIsOpen(false); }} className="w-full justify-start">
+                    <User className="mr-2 h-4 w-4" />
+                    Profil
+                  </Button>
+                  <Button variant="ghost" size="sm" onClick={() => { handleLogout(); setIsOpen(false); }} className="w-full justify-start">
+                    <LogOut className="mr-2 h-4 w-4" />
+                    Keluar
+                  </Button>
+                </>
               ) : (
                 <Button variant="hero" size="sm" asChild className="w-full">
                   <Link to="/auth">Masuk / Daftar</Link>
