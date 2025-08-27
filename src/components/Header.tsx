@@ -5,13 +5,7 @@ import { useTheme } from "next-themes";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import Logo from "@/assets/logo_B_nobg.png";
 import { useAuth } from "@/hooks/useAuth";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { supabase } from "@/integrations/supabase/client";
 
 const sections = ["home", "sejarah", "galeri", "budaya_tradisi", "eco-batik"] as const;
@@ -21,7 +15,7 @@ const Header = () => {
   const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<Section>("home");
-  const [userProfile, setUserProfile] = useState<{ full_name: string } | null>(null);
+  const [userProfile, setUserProfile] = useState<{ username: string } | null>(null);
   const location = useLocation();
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
@@ -106,11 +100,7 @@ const Header = () => {
     if (!user) return;
 
     try {
-      const { data, error } = await supabase
-        .from("profiles")
-        .select("full_name")
-        .eq("user_id", user.id)
-        .single();
+      const { data, error } = await supabase.from("profiles").select("username").eq("user_id", user.id).single();
 
       if (!error && data) {
         setUserProfile(data);
@@ -153,7 +143,7 @@ const Header = () => {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="outlinorange" size="sm" className="hidden md:flex">
-                      {userProfile?.full_name || "User"}
+                      {userProfile?.username || "User"}
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end" className="w-48">
@@ -221,11 +211,27 @@ const Header = () => {
             <div className="mt-auto space-y-2">
               {user ? (
                 <>
-                  <Button variant="ghost" size="sm" onClick={() => { navigate("/profile"); setIsOpen(false); }} className="w-full justify-start">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => {
+                      navigate("/profile");
+                      setIsOpen(false);
+                    }}
+                    className="w-full justify-start"
+                  >
                     <User className="mr-2 h-4 w-4" />
                     Profil
                   </Button>
-                  <Button variant="ghost" size="sm" onClick={() => { handleLogout(); setIsOpen(false); }} className="w-full justify-start">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => {
+                      handleLogout();
+                      setIsOpen(false);
+                    }}
+                    className="w-full justify-start"
+                  >
                     <LogOut className="mr-2 h-4 w-4" />
                     Keluar
                   </Button>

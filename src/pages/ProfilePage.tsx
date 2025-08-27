@@ -52,11 +52,7 @@ const ProfilePage = () => {
     if (!user) return;
 
     try {
-      const { data, error } = await supabase
-        .from("profiles")
-        .select("full_name, username, origin, birth_date")
-        .eq("user_id", user.id)
-        .single();
+      const { data, error } = await supabase.from("profiles").select("full_name, username, origin, birth_date").eq("user_id", user.id).single();
 
       if (error) {
         console.error("Error fetching profile:", error);
@@ -147,63 +143,33 @@ const ProfilePage = () => {
         <Card data-aos="fade-up">
           <CardHeader>
             <CardTitle>Informasi Profil</CardTitle>
-            <CardDescription>
-              Kelola informasi profil Anda di sini
-            </CardDescription>
+            <CardDescription>Kelola informasi profil Anda di sini</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-4">
               <div>
                 <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={user.email || ""}
-                  disabled
-                  className="bg-muted"
-                />
+                <Input id="email" type="email" value={user.email || ""} disabled className="bg-muted" />
               </div>
 
               <div>
                 <Label htmlFor="full_name">Nama Lengkap</Label>
-                <Input
-                  id="full_name"
-                  value={formData.full_name}
-                  onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                  disabled={!isEditing}
-                />
+                <Input id="full_name" value={formData.full_name} onChange={(e) => setFormData({ ...formData, full_name: e.target.value })} disabled={!isEditing} />
               </div>
 
               <div>
                 <Label htmlFor="username">Username</Label>
-                <Input
-                  id="username"
-                  value={formData.username}
-                  onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-                  disabled={!isEditing}
-                />
+                <Input id="username" value={formData.username} onChange={(e) => setFormData({ ...formData, username: e.target.value })} disabled={!isEditing} maxLength={10} />
               </div>
 
               <div>
                 <Label htmlFor="origin">Asal Daerah</Label>
-                <Input
-                  id="origin"
-                  value={formData.origin}
-                  onChange={(e) => setFormData({ ...formData, origin: e.target.value })}
-                  disabled={!isEditing}
-                  placeholder="Contoh: Jakarta, Indonesia"
-                />
+                <Input id="origin" value={formData.origin} onChange={(e) => setFormData({ ...formData, origin: e.target.value })} disabled={!isEditing} placeholder="Contoh: Jakarta, Indonesia" />
               </div>
 
               <div>
                 <Label htmlFor="birth_date">Tanggal Lahir</Label>
-                <Input
-                  id="birth_date"
-                  type="date"
-                  value={formData.birth_date}
-                  onChange={(e) => setFormData({ ...formData, birth_date: e.target.value })}
-                  disabled={!isEditing}
-                />
+                <Input id="birth_date" type="date" value={formData.birth_date} onChange={(e) => setFormData({ ...formData, birth_date: e.target.value })} disabled={!isEditing} />
               </div>
 
               <div>
@@ -224,7 +190,7 @@ const ProfilePage = () => {
                   <Button onClick={handleSave} variant="contact">
                     Simpan
                   </Button>
-                  <Button 
+                  <Button
                     onClick={() => {
                       setIsEditing(false);
                       setFormData({
@@ -233,7 +199,7 @@ const ProfilePage = () => {
                         origin: profile?.origin || "",
                         birth_date: profile?.birth_date || "",
                       });
-                    }} 
+                    }}
                     variant="outline"
                   >
                     Batal
