@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuth } from "@/hooks/useAuth";
-import Header from "@/components/Header";
 import AOS from "aos";
 
 const AuthPage = () => {
@@ -40,7 +39,7 @@ const AuthPage = () => {
   // Redirect if already authenticated
   useEffect(() => {
     if (user) {
-      navigate("/dashboard");
+      navigate("/");
     }
   }, [user, navigate]);
 
@@ -64,7 +63,7 @@ const AuthPage = () => {
     setIsLoading(true);
     const { error } = await signIn(loginForm.emailOrUsername, loginForm.password);
     if (!error) {
-      navigate("/dashboard");
+      navigate("/");
     }
     setIsLoading(false);
   };
@@ -93,8 +92,8 @@ const AuthPage = () => {
                 <TabsContent value="login">
                   <form onSubmit={handleLogin} className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="emailOrUsername">Email atau Username</Label>
-                      <Input id="emailOrUsername" type="text" placeholder="Masukkan email atau username" value={loginForm.emailOrUsername} onChange={(e) => setLoginForm({ ...loginForm, emailOrUsername: e.target.value })} required />
+                      <Label htmlFor="emailOrUsername">Email </Label>
+                      <Input id="emailOrUsername" type="text" placeholder="Masukkan email" value={loginForm.emailOrUsername} onChange={(e) => setLoginForm({ ...loginForm, emailOrUsername: e.target.value })} required />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="loginPassword">Password</Label>
