@@ -33,32 +33,23 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const { toast } = useToast();
 
   useEffect(() => {
-    let mounted = true;
-
-    // Set up auth state listener first
+    // Set up auth state listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
-        if (mounted) {
-          setSession(session);
-          setUser(session?.user ?? null);
-          setLoading(false);
-        }
+        setSession(session);
+        setUser(session?.user ?? null);
+        setLoading(false);
       }
     );
 
     // Check for existing session
     supabase.auth.getSession().then(({ data: { session } }) => {
-      if (mounted) {
-        setSession(session);
-        setUser(session?.user ?? null);
-        setLoading(false);
-      }
+      setSession(session);
+      setUser(session?.user ?? null);
+      setLoading(false);
     });
 
-    return () => {
-      mounted = false;
-      subscription.unsubscribe();
-    };
+    return () => subscription.unsubscribe();
   }, []);
 
   const signUp = async (email: string, password: string, fullName: string, username: string, birthDate?: string, origin?: string) => {

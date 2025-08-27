@@ -13,7 +13,6 @@ import BudayaTradisiPage from "./pages/BudayaTradisiPage";
 import AuthPage from "./pages/AuthPage";
 import DashboardPage from "./pages/DashboardPage";
 import { AuthProvider } from "./hooks/useAuth";
-import ProtectedRoute from "./components/ProtectedRoute";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -46,11 +45,7 @@ const App = () => {
                 <Route path="/galeri" element={<GaleriPage />} />
                 <Route path="/budaya_tradisi" element={<BudayaTradisiPage />} />
                 <Route path="/auth" element={<AuthPage />} />
-                <Route path="/dashboard" element={
-                  <ProtectedRoute>
-                    <DashboardPage />
-                  </ProtectedRoute>
-                } />
+                <Route path="/dashboard" element={<DashboardPage />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
