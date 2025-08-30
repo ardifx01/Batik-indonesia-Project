@@ -23,9 +23,9 @@ const Index = () => {
       <Hero />
       <AboutSection />
       <HistorySection />
-      <MotifSection />
+      <MotifSection data-aos="fade-up" />
       <CulturalValueSection />
-      <ModernBatikSection />
+      <ModernBatikSection data-aos="fade-up" />
       <CallToActionSection />
       <Footer />
     </div>

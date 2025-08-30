@@ -2,7 +2,9 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-student.jpg";
 import batik from "@/assets/3D/batikdua.glb";
 import "@google/model-viewer";
+import { useNavigate } from "react-router-dom";
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="min-h-screen bg-gradient-hero flex items-center pt-16" id="home">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
@@ -19,14 +21,14 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 items-start">
-              <Button variant="contact" size="xl">
+              <Button variant="contact" size="xl" onClick={() => navigate("/eco-batik")}>
                 Jelajahi
               </Button>
 
               <div className="flex flex-col sm:flex-row gap-6 text-foreground">
                 <div>
                   <div className="text-3xl font-bold text-orange">15+</div>
-                  <div className="text-sm text-muted-foreground">Jenis Batik </div>
+                  <div className="text-sm text-muted-foreground">Jenis Batik</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-purple">5K+</div>
