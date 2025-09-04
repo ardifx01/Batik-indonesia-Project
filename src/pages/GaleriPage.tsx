@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AOS from "aos";
-const batikImages = ["/src/assets/hero-student.jpg", "/images/batik2.jpg", "/images/batik3.jpg"];
+const batikImages = ["/src/assets/galeri_1.jpg", "/src/assets/galeri_2.jpg", "/src/assets/galeri_3.jpg"];
 const GaleriPage = () => {
   const [current, setCurrent] = useState(0);
   useEffect(() => {

@@ -34,16 +34,16 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-foreground">Sosial Media</h4>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-orange transition-colors group">
+              <a href="https://www.facebook.com/dio.syahputra.2003" className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-orange transition-colors group">
                 <Facebook className="w-5 h-5 text-muted-foreground group-hover:text-white" />
               </a>
-              <a href="#" className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-purple transition-colors group">
+              <a href="https://www.instagram.com/dioo.syhptra/" className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-purple transition-colors group">
                 <Instagram className="w-5 h-5 text-muted-foreground group-hover:text-white" />
               </a>
-              <a href="#" className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-turquoise transition-colors group">
+              <a href="https://www.linkedin.com/in/dio-syahputra/" className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-turquoise transition-colors group">
                 <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-white" />
               </a>
-              <a href="#" className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-pink transition-colors group">
+              <a href="https://www.youtube.com/@diosyahputra9111" className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-pink transition-colors group">
                 <Youtube className="w-5 h-5 text-muted-foreground group-hover:text-white" />
               </a>
             </div>
