@@ -23,5 +23,7 @@ Dibangun dengan:
    ```bash
    git clone https://github.com/DioDiZy/Batik-indonesia-Project.git
    cd Batik-indonesia-Project
-2. ```bash npm install
-3.  ```bash npm run dev
+2. ```bash
+   npm install
+3.  ```bash
+    npm run dev
