@@ -134,8 +134,8 @@ const EcoBatikPage = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-4" data-aos="fade-up" data-aos-delay="100">
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-orange bg-clip-text text-transparent">70%</div>
-              <p className="text-muted-foreground">Pengurangan limbah kimia dibanding batik konvensional</p>
+            <div className="text-4xl md:text-5xl font-bold bg-gradient-orange bg-clip-text text-transparent">70%</div>
+            <p className="text-muted-foreground">Pengurangan limbah kimia dibanding batik konvensional</p>
             </div>
 
             <div className="space-y-4" data-aos="fade-up" data-aos-delay="200">

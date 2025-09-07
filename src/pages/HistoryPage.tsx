@@ -172,12 +172,12 @@ const HistoryPage = () => {
                   <div className="w-32 h-32 bg-orange/20 rounded-full mx-auto mb-4 flex items-center justify-center">
                     <span className="text-4xl">🏆</span>
                   </div>
-                  <p className="text-sm text-muted-foreground">Masterpiece of Oral and Intangible Heritage</p>
+                  <p className="text-sm text-muted-foreground">Karya Agung Warisan Lisan dan Tak Benda Dunia</p>
                 </div>
                 <div className="max-w-3xl mx-auto">
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     Pada 2 Oktober 2009, UNESCO secara resmi mengakui batik Indonesia sebagai 
-                    "Masterpiece of the Oral and Intangible Heritage of Humanity". Pengakuan ini 
+                    "Karya Agung Warisan Lisan dan Tak Benda Dunia". Pengakuan ini 
                     menegaskan bahwa batik bukan hanya warisan budaya Indonesia, tetapi juga 
                     warisan dunia yang harus dilestarikan.
                   </p>

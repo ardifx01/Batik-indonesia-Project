@@ -112,15 +112,15 @@ const ModernBatikSection = () => {
               </div>
               <div>
                 <div className="text-3xl font-bold">$2.8B</div>
-                <div className="text-sm opacity-80">Export Value</div>
+                <div className="text-sm opacity-80">Nilai Ekspor</div>
               </div>
               <div>
                 <div className="text-3xl font-bold">50+</div>
-                <div className="text-sm opacity-80">Fashion Week</div>
+                <div className="text-sm opacity-80">Pekan Mode</div>
               </div>
               <div>
                 <div className="text-3xl font-bold">1000+</div>
-                <div className="text-sm opacity-80">Brand Global</div>
+                <div className="text-sm opacity-80">Merek Global</div>
               </div>
             </div>
             <p className="text-sm opacity-90 mb-6">Batik Indonesia telah menjadi inspirasi bagi designer internasional dan hadir di berbagai fashion week dunia.</p>

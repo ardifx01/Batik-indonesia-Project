@@ -87,24 +87,24 @@ const ProfilePage = () => {
 
       if (error) {
         toast({
-          title: "Error",
-          description: "Failed to update profile",
+          title: "Kesalahan",
+          description: "Gagal memperbarui profil",
           variant: "destructive",
         });
         return;
       }
 
       toast({
-        title: "Success",
-        description: "Profile updated successfully!",
+        title: "Berhasil",
+        description: "Profil berhasil diperbarui!",
       });
 
       setProfile(formData);
       setIsEditing(false);
     } catch (error) {
       toast({
-        title: "Error",
-        description: "An unexpected error occurred",
+        title: "Kesalahan",
+        description: "Terjadi kesalahan yang tidak terduga",
         variant: "destructive",
       });
     }
