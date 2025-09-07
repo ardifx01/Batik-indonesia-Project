@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, Menu, X, User, LogOut } from "lucide-react";
+import { Moon, Sun, Menu, X, User, LogOut, ShoppingCart } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import Logo from "@/assets/logo_B_nobg.png";
@@ -150,6 +150,10 @@ const Header = () => {
                     <DropdownMenuItem onClick={() => navigate("/profile")}>
                       <User className="mr-2 h-4 w-4" />
                       Profil
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => navigate("/cart")}>
+                      <ShoppingCart className="mr-2 h-4 w-4" />
+                      Cart
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onClick={handleLogout}>

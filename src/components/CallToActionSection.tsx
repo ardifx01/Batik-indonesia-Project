@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Heart, Share2, Users, BookOpen } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const CallToActionSection = () => {
+  const navigate = useNavigate();
+
   const actions = [
     {
       icon: BookOpen,
@@ -10,6 +13,7 @@ const CallToActionSection = () => {
       description: "Mulai perjalanan Anda untuk memahami keindahan dan filosofi batik Indonesia",
       action: "Mulai Belajar",
       color: "orange",
+      aksi: () => navigate("/sejarah"),
     },
     {
       icon: Share2,
@@ -17,6 +21,9 @@ const CallToActionSection = () => {
       description: "Bagikan keindahan batik kepada dunia melalui media sosial dan komunitas",
       action: "Bagikan Sekarang",
       color: "purple",
+      aksi: () => {
+        window.open("https://wa.me/6282244594151", "_blank");
+      },
     },
     {
       icon: Users,
@@ -24,6 +31,9 @@ const CallToActionSection = () => {
       description: "Bergabunglah dengan komunitas pecinta batik dari seluruh Indonesia",
       action: "Gabung Komunitas",
       color: "turquoise",
+      aksi: () => {
+        window.open("https://wa.me/6282244594151", "_blank");
+      },
     },
     {
       icon: Heart,
@@ -31,6 +41,7 @@ const CallToActionSection = () => {
       description: "Dukung pengrajin batik lokal dengan membeli produk batik asli Indonesia",
       action: "Beli Batik Asli",
       color: "pink",
+      aksi: () => navigate("/beli-batik"),
     },
   ];
 
@@ -52,7 +63,7 @@ const CallToActionSection = () => {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-4">{action.title}</h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">{action.description}</p>
-              <Button variant="contact" className="w-full">
+              <Button onClick={() => action.aksi()} variant="contact" className="w-full">
                 {action.action}
               </Button>
             </Card>
@@ -102,7 +113,7 @@ const CallToActionSection = () => {
           <Card className="p-8 bg-gradient-purple text-white border-0">
             <h4 className="text-xl font-bold mb-4">Untuk Pengrajin</h4>
             <p className="text-sm opacity-90 mb-6">Dukung pengrajin batik dengan membeli produk asli dan mengapresiasi karya mereka.</p>
-            <Button variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
+            <Button onClick={() => navigate("/beli-batik")} variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
               Beli Batik Asli
             </Button>
           </Card>
