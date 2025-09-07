@@ -27,3 +27,13 @@ Dibangun dengan:
    npm install
 3.  ```bash
     npm run dev
+
+
+
+Tautan Berguna
+
+Demo Live: batik-indonesia-project.vercel.app
+ 
+GitHub
+
+Teknologi Utama: Vite, React, TypeScript, shadcn-ui, Tailwind CSS
