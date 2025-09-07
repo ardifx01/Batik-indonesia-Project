@@ -17,7 +17,7 @@ const AboutSection = () => {
     {
       icon: Globe,
       title: "Diakui UNESCO",
-      description: "Batik Indonesia telah diakui UNESCO sebagai Karya Agung Warisan Lisan dan Tak Benda Dunia.",
+      description: "Batik Indonesia telah diakui UNESCO sebagai Masterpiece of Oral and Intangible Heritage.",
     },
   ];
 

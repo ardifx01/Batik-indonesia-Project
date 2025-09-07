@@ -30,7 +30,7 @@ const HistorySection = () => {
     {
       year: "2009",
       title: "Pengakuan UNESCO",
-      description: "Batik Indonesia diakui sebagai Karya Agung Warisan Lisan dan Tak Benda Dunia.",
+      description: "Batik Indonesia diakui sebagai Masterpiece of Oral and Intangible Heritage of Humanity.",
       highlight: "Dunia",
     },
   ];
