@@ -10,7 +10,7 @@ import GalleryGrid from "@/components/GalleryGrid";
 import MotifSlider from "@/components/MotifSlider";
 
 // Import images
-import heroBackground from "@/assets/background-hero-batik.jpg";
+import heroBackground from "@/assets/galeri_3.jpg";
 import batikParang from "@/assets/batik-parang.jpg";
 import batikKawung from "@/assets/batik-kawung.jpg";
 import batikMegamendung from "@/assets/batik-megamendung.jpg";

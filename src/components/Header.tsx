@@ -8,13 +8,13 @@ import { useAuth } from "@/hooks/useAuth";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { supabase } from "@/integrations/supabase/client";
 
-const sections = ["home", "sejarah", "galeri", "budaya_tradisi", "eco-batik"] as const;
+const sections = ["beranda", "sejarah", "galeri", "budaya_tradisi", "eco-batik"] as const;
 type Section = (typeof sections)[number];
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<Section>("home");
+  const [activeSection, setActiveSection] = useState<Section>("beranda");
   const [userProfile, setUserProfile] = useState<{ username: string } | null>(null);
   const location = useLocation();
   const navigate = useNavigate();
@@ -25,17 +25,17 @@ const Header = () => {
     window.scrollTo(0, 0);
 
     if (location.pathname === "/") {
-      setActiveSection("home");
+      setActiveSection("beranda");
       return;
     }
 
     // Ambil segmen pertama setelah "/"
-    const slug = (location.pathname.split("/")[1] || "home") as Section;
+    const slug = (location.pathname.split("/")[1] || "beranda") as Section;
 
     if (sections.includes(slug)) {
       setActiveSection(slug);
     } else {
-      setActiveSection("home");
+      setActiveSection("beranda");
     }
   }, [location.pathname]);
 
@@ -54,7 +54,7 @@ const Header = () => {
     } else {
       // Di halaman lain: pindah route
       setActiveSection(id);
-      navigate(id === "home" ? "/" : `/${id}`);
+      navigate(id === "beranda" ? "/" : `/${id}`);
     }
   };
 
@@ -74,13 +74,13 @@ const Header = () => {
     );
 
     // Observe hanya section yang memang ada di home
-    ["home", "sejarah", "galeri", "budaya_tradisi", "eco-batik"].forEach((id) => {
+    ["beranda", "sejarah", "galeri", "budaya_tradisi", "eco-batik"].forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
 
     return () => {
-      ["home", "sejarah", "galeri", "budaya_tradisi", "eco-batik"].forEach((id) => {
+      ["beranda", "sejarah", "galeri", "budaya_tradisi", "eco-batik"].forEach((id) => {
         const el = document.getElementById(id);
         if (el) observer.unobserve(el);
       });
