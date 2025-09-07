@@ -12,6 +12,10 @@ import GaleriPage from "./pages/GaleriPage";
 import BudayaTradisiPage from "./pages/BudayaTradisiPage";
 import AuthPage from "./pages/AuthPage";
 import ProfilePage from "./pages/ProfilePage";
+import BeliBatikPage from "./pages/BeliBatikPage";
+import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import OrdersPage from "./pages/OrdersPage";
 import { AuthProvider } from "./hooks/useAuth";
 import "aos/dist/aos.css";
 import AOS from "aos";
@@ -46,6 +50,10 @@ const App = () => {
                 <Route path="/budaya_tradisi" element={<BudayaTradisiPage />} />
                 <Route path="/auth" element={<AuthPage />} />
                 <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/beli-batik" element={<BeliBatikPage />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
+                <Route path="/orders" element={<OrdersPage />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
